@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rene Almeida - Personal Website & Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        tamu: '#500000',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Brand Name -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-sky-500"></span>
+                        RENE ALMEIDA
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-4">
+                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">HOME</a>
+                    <a href="#portfolio" class="px-3 py-2 rounded-md text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">PORTFOLIO</a>
+                    <a href="#qualifications" class="px-3 py-2 rounded-md text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">QUALIFICATIONS</a>
+                    <a href="#service" class="px-3 py-2 rounded-md text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">SERVICE</a>
+                </nav>
+
+                <!-- Social Links & Theme Switcher -->
+                <div class="flex items-center space-x-3">
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" aria-label="Change Theme" class="p-2 text-xs font-semibold rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all flex items-center gap-1.5 border border-slate-300 dark:border-slate-700">
+                        <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon text-sm"></i>
+                        <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun text-amber-400 text-sm"></i>
+                        <span class="hidden sm:inline">Change Theme</span>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-4 space-y-1">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">HOME</a>
+            <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">PORTFOLIO</a>
+            <a href="#qualifications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">QUALIFICATIONS</a>
+            <a href="#service" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">SERVICE</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Social Header Quick Links Bar -->
+        <div class="bg-slate-100 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800/80 py-3">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center sm:justify-start items-center gap-4 text-sm">
+                <span class="text-slate-500 dark:text-slate-400 font-medium hidden sm:inline">Connect:</span>
+                <a href="https://www.linkedin.com/in/rene-almeida-130858335/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <i class="fa-brands fa-linkedin text-blue-600"></i> LinkedIn
+                </a>
+                <a href="https://profile.indeed.com/?hl=en_US&co=US&from=gnav-jobsearch--indeedmobile" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <i class="fa-solid fa-briefcase text-indigo-500"></i> Indeed
+                </a>
+                <a href="mailto:renealmedia1013@tamu.edu" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <i class="fa-solid fa-envelope text-red-500"></i> Email
+                </a>
+                <a href="https://github.com/ralmeida1013" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <i class="fa-brands fa-github text-slate-900 dark:text-white"></i> Github
+                </a>
+                <a href="https://www.discordapp.com/users/453963914162733057" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <i class="fa-brands fa-discord text-indigo-400"></i> Discord
+                </a>
+            </div>
+        </div>
+
+        <!-- SECTION 1: HOME / ABOUT ME -->
+        <section id="home" class="py-12 md:py-20 border-b border-slate-200 dark:border-slate-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Hero Header with Image & Bio Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+                    <!-- Text Profile -->
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-semibold uppercase tracking-wider mb-4">
+                            Texas A&M Graduate
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+                            RENE ALMEIDA
+                        </h1>
+                        <h2 class="text-xl text-sky-600 dark:text-sky-400 font-medium mb-6">
+                            Entry-Level Software Engineer
+                        </h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            I am an Entry-Level Software Engineer with a B.S. in Computer Science from Texas A&M University (graduating senior, August 2026). I have a strong foundation in software engineering principles, full-stack web application development, dynamic data integration, and functional programming. I excel at building practical software solutions through hands-on project experience and collaborative teamwork.
+                        </p>
+                    </div>
+
+                    <!-- Profile Photo -->
+                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                        <div class="relative group max-w-sm w-full">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                            <img src="me.jpg" alt="Rene Almeida at Dinosaur Exhibit" class="relative rounded-2xl shadow-xl w-full object-cover max-h-[440px] border border-slate-200 dark:border-slate-800" onerror="this.onerror=null; this.src='https://placehold.co/600x800/0f172a/ffffff?text=Rene+Almeida';">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details & Hobbies Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <!-- CS Technical Focus -->
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Favorite Areas of Computer Science</h3>
+                        <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-sky-500"></i> Web Development
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-sky-500"></i> AI (Artificial Intelligence)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-sky-500"></i> Computer Graphics
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Hobbies Outside CS -->
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-icons"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Hobbies Outside of CS</h3>
+                        <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-music text-emerald-500"></i> Playing the Trombone
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-pencil text-emerald-500"></i> Sketching Paleoart
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-cubes text-emerald-500"></i> Building Lego Sets
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fun Facts Cards -->
+                <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-500"></i> Fun Facts
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Favorite Video Games -->
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-slate-900 dark:text-white flex items-center gap-2 text-lg">
+                                <i class="fa-solid fa-gamepad text-indigo-500"></i> Favorite Video Games
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Castlevania: Symphony of the Night</li>
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Super Mario Galaxy</li>
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Persona 5 Royal</li>
+                            </ul>
+                        </div>
+
+                        <!-- Favorite Songs -->
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-slate-900 dark:text-white flex items-center gap-2 text-lg">
+                                <i class="fa-solid fa-compact-disc text-rose-500"></i> Favorite Songs
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">The Show Must Go On - Queen</li>
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Tu Y Yo Somos Uno Mismo - Timbiriche</li>
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">For Whom The Bell Tolls - Metallica</li>
+                            </ul>
+                        </div>
+
+                        <!-- Favorite Movies -->
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-slate-900 dark:text-white flex items-center gap-2 text-lg">
+                                <i class="fa-solid fa-film text-sky-500"></i> Favorite Movies
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Jurassic Park</li>
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Star Wars: Episode III - Revenge of the Sith</li>
+                                <li class="bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">Predator</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PORTFOLIO -->
+        <section id="portfolio" class="py-12 md:py-20 border-b border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-900/30">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">PORTFOLIO</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Featured projects and technical work.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1: SLT - Sign Language Translation App (Most Prominent) -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between md:col-span-2">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">SLT - Sign Language Translation App</h3>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Senior Capstone / ML</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                For senior capstone design, I worked with a group of four to develop an American Sign Language translation web app. In its current state, it is able to translate ASL fingerspelling to text from user-recorded videos using a custom made ML model. My role was front-end lead, working on the user interface and integrating it with the back-end.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <a href="https://github.com/sareemmomin21/ASL-Capstone" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                                <i class="fa-brands fa-github"></i> GitHub Link
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: POS System (Renamed from Restaurant Web App) -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">POS System</h3>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">HTML / CSS / SQL</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                As a collaborative project, I helped with creating a web app for the fictional "Phoenix Boba Shop" by designing and creating the functionality for the manager page. This involved designing the CSS to be in line with the rest of the web app, using html for the pages, and writing the scripts for modification of data being pulled from a database using SQL queries. Such functionality included viewing the current inventory, ordering items from different suppliers, viewing the order history, editing employees, and generating X and Z sales reports.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-4">
+                            <a href="https://github.com/CSCE331-Spring-2025/team_phoenix_project_3/tree/main/managementUI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                                <i class="fa-brands fa-github"></i> GitHub Link
+                            </a>
+                            <a href="https://team-phoenix-project-3.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Web App Link
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: TourGPT - AI Chatbot -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">TourGPT - AI Chatbot</h3>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">Python / AI</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                I worked in a group to create an AI chatbot that allows users to see a list of selected tours given a city and a date range. I worked on several of the AI tools, including getting a "value score" and sentiment analysis from user reviews and tour prices.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <a href="https://github.com/jeremiahherm/AI_Project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                                <i class="fa-brands fa-github"></i> GitHub Link
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Enhanced Tetris -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Enhanced Tetris</h3>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">Ruby</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                As a project, I took a working build of a version of the classic puzzle game Tetris and added a handful of modifications to the rules of the game, in addition to new gameplay features using the Ruby programming language. Within this new version of Tetris with enhancements implemented, there are three new pieces in addition to the classic seven pieces. A feature where the player can flip a piece 180 degrees has been added, as well as a "cheat" mode where the next piece is a 1 x 1 square, but only if the player has 100 or more points as it costs 100 points to use. Working on this project, I was able to refine my skills in using dynamic dispatch, modifying subclasses, and enhancing my skills in Object-Oriented Programming.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <a href="https://github.com/CSCE331-Spring-2025/project1-550-ralmeida1013/blob/main/tetris.zip" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                                <i class="fa-solid fa-file-zipper"></i> Link (tetris.zip)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: MUPL Interpreter -->
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">MUPL Interpreter</h3>
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">Racket</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Using the Racket programming language, I wrote a program that interpreted a MUPL (made up programming language). Within the program, there are definitions for variables, integers, addition function, local bindings, etc. Each definition extensively uses type checking and error handling. The project added to my experience with statically typed, functional languages, as well as a deeper understanding on the structure of a programming language.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <a href="https://github.com/CSCE331-Spring-2025/project1-550-ralmeida1013/blob/main/homework4.rkt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                                <i class="fa-solid fa-code"></i> Link (homework4.rkt)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: QUALIFICATIONS -->
+        <section id="qualifications" class="py-12 md:py-20 border-b border-slate-200 dark:border-slate-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">QUALIFICATIONS</h2>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Resume & Credentials</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">Summary of academic performance and technical skills.</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-100 dark:border-slate-800 pt-6">
+                            <!-- Embedded Resume Iframe -->
+                            <div class="w-full overflow-x-auto flex justify-center bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                                <iframe src="https://drive.google.com/file/d/12pzwpZBmXiK9sGwqD9J1qiRixJaoyt3X/preview" width="640" height="480" class="max-w-full rounded-lg shadow-sm"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SERVICE -->
+        <section id="service" class="py-12 md:py-20 border-b border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-900/30">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-8">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">SERVICE</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Community outreach and university leadership.</p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Sea Aggie Band</h3>
+                            <p class="text-sky-600 dark:text-sky-400 font-medium">Texas A&M University at Galveston</p>
+                        </div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold self-start md:self-auto">
+                            Member & Former President (Fall 2025 - Spring 2026)
+                        </span>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                        As a member and former President (Fall 2025-Spring 2026) of the Sea Aggie Band at Texas A&M University at Galveston, we have contributed to our local community by playing at a multitude of events. Such events include campus sanctioned events such as Saturday Aggieland By The Sea, Midnight Yell, Muster, The Big Event, and Midnight Breakfast. In addition to these events, we have also played for the community in Galveston, having had a concert in a nursing home as well as a halloween parade.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="https://www.facebook.com/officialseaaggieband/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/official_sea_aggie_band/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-pink-600 hover:bg-pink-700 text-white text-sm font-medium transition-colors">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <span class="text-lg font-bold text-slate-900 dark:text-white">Rene Almeida</span>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Undergraduate Computer Science Major | Texas A&M University</p>
+                </div>
+
+                <!-- Footer Social Links -->
+                <div class="flex flex-wrap items-center gap-4 text-sm">
+                    <a href="https://www.linkedin.com/in/rene-almeida-130858335/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-sky-500 transition-colors">LinkedIn</a>
+                    <a href="https://profile.indeed.com/?hl=en_US&co=US&from=gnav-jobsearch--indeedmobile" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-sky-500 transition-colors">Indeed</a>
+                    <a href="mailto:renealmedia1013@tamu.edu" class="text-slate-500 hover:text-sky-500 transition-colors">Email</a>
+                    <a href="https://github.com/ralmeida1013" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-sky-500 transition-colors">GitHub</a>
+                    <a href="https://www.discordapp.com/users/453963914162733057" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-sky-500 transition-colors">Discord</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Switcher Logic Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Check theme preferences on load
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        }
+
+        // Toggle button listener
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
